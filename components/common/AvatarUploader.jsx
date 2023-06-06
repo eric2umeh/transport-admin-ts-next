@@ -33,6 +33,7 @@ const AvatarUploader = ({image, setImage, picsName}) => {
     };
 
     reader.readAsDataURL(file);
+    console.log(file)
   };
 
   return (

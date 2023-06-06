@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Dashboard from './dashboard'
 import LogIn from './login'
 
 export default function Home() {
