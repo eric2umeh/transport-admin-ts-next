@@ -9,9 +9,9 @@ const MainMenu = ({ style = '' }) => {
     <nav className="menu js-navList">
       <ul className={`menu__nav ${style} -is-active`}>
 
-        {/* <li className={router.pathname ==='/companyaccount' ? 'current' : ''}>
+        <li className={router.pathname ==='/companyaccount' ? 'current' : ''}>
           <Link href='/companyaccount'>Account</Link>
-        </li> */}
+        </li>
         
         <li className={router.pathname === '/history' ? 'current' : ''}>
           {/* <Link href="/history">History</Link> */}

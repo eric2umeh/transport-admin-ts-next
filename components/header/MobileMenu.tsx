@@ -35,7 +35,7 @@ const MobileMenu = () => {
       </div>
       {/* End pro-header */}
 
-      {/* <ProSidebarProvider>
+      <ProSidebarProvider>
         <Sidebar width="400" backgroundColor="#fff">
           <Menu>
             <MenuItem
@@ -52,11 +52,11 @@ const MobileMenu = () => {
             >
               Account
             </MenuItem>
-            End  account Menu
+            {/* End  account Menu */}
 
           </Menu>
         </Sidebar>
-      </ProSidebarProvider> */}
+      </ProSidebarProvider>
 
       <div className="mobile-footer px-20 py-5 border-top-light"></div>
     </>
