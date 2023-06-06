@@ -41,7 +41,7 @@ const MobileMenu = () => {
             <MenuItem
               component={
                 <Link
-                  href='/companyaccount'
+                  href='/account'
                   className={
                     router.pathname === '/companyaccount'
                       ? 'menu-active-link'

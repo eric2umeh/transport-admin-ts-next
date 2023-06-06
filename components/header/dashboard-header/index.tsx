@@ -69,18 +69,18 @@ const HeaderDashBoard = () => {
               <div className="d-flex items-center">
 
                 <div className="row items-center x-gap-5 y-gap-20 pl-20 lg:d-none">
-                  {/* <div className="col-auto">
+                  <div className="col-auto">
                     <button className="button -blue-1-05 size-50 rounded-22 flex-center">
                       <i className="icon-email-2 text-20"></i>
                     </button>
-                  </div> */}
+                  </div>
                   {/* End col-auto */}
 
-                  {/* <div className="col-auto">
+                  <div className="col-auto">
                     <button className="button -blue-1-05 size-50 rounded-22 flex-center">
                       <i className="icon-notification text-20"></i>
                     </button>
-                  </div> */}
+                  </div>
 
                   <div className="header-menu">
                   <div className="header-menu__content">
@@ -92,7 +92,7 @@ const HeaderDashBoard = () => {
                 </div>
                 {/* End .row */}
 
-                {/* <div className="pl-15">
+                <div className="pl-15">
                   <Image
                     width={50}
                     height={50}
@@ -100,7 +100,7 @@ const HeaderDashBoard = () => {
                     alt="image"
                     className="size-50 rounded-22 object-cover"
                   />
-                </div> */}
+                </div>
 
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-20">
                   <div>
