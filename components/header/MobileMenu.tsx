@@ -35,13 +35,13 @@ const MobileMenu = () => {
       </div>
       {/* End pro-header */}
 
-      {/* <ProSidebarProvider>
+      <ProSidebarProvider>
         <Sidebar width="400" backgroundColor="#fff">
           <Menu>
             <MenuItem
               component={
                 <Link
-                  href='/companyaccount'
+                  href='/account'
                   className={
                     router.pathname === '/companyaccount'
                       ? 'menu-active-link'
@@ -52,11 +52,11 @@ const MobileMenu = () => {
             >
               Account
             </MenuItem>
-            End  account Menu
+            {/* End  account Menu */}
 
           </Menu>
         </Sidebar>
-      </ProSidebarProvider> */}
+      </ProSidebarProvider>
 
       <div className="mobile-footer px-20 py-5 border-top-light"></div>
     </>

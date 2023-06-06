@@ -1,10 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import Seo from "../../components/common/Seo";
-import Header3 from "../../components/header/header-3";
+import Seo from "../components/common/Seo";
+import Header3 from "../components/header/header-3";
 import Link from "next/link";
-import ForgetpasswordForm from "../../components/common/ForgetpasswordForm";
-import Copyright from "../../components/footer/footer-3/Copyright";
+import ForgetpasswordForm from "../components/common/ForgetpasswordForm";
+import Copyright from "../components/footer/footer-3/Copyright";
 
 const ForgetPassword = () => {
   return (
@@ -29,7 +29,7 @@ const ForgetPassword = () => {
                 <div className="row y-gap-20 pt-30">
                   <p className="mt-10">
                     Go Back to{" "}
-                    <Link href="/companysignup/emailverification" className="text-blue-1">
+                    <Link href="/emailverification" className="text-blue-1">
                       Sign up 
                     </Link>
                   </p>

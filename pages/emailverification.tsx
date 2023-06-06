@@ -1,10 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import Seo from "../../components/common/Seo";
-import Header3 from "../../components/header/header-3";
+import Seo from "../components/common/Seo";
+import Header3 from "../components/header/header-3";
 import Link from "next/link";
-import ForgetpasswordForm from "../../components/common/ForgetpasswordForm";
-import Copyright from "../../components/footer/footer-3/Copyright";
+import ForgetpasswordForm from "../components/common/ForgetpasswordForm";
+import Copyright from "../components/footer/footer-3/Copyright";
 
 const EmailVerification = () => {
   return (

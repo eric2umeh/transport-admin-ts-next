@@ -32,7 +32,7 @@ const LoginForm = () => {
       {/* End .col */}
 
       <div className="col-12">
-        <a href="/companysignup/forgetpassword" className="text-14 fw-500 text-blue-1 underline">
+        <a href="/forget-password" className="text-14 fw-500 text-blue-1 underline">
           Forgot your password?
         </a>
       </div>
