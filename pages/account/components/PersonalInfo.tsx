@@ -73,7 +73,7 @@ const PersonalInfo = () => {
             type="submit"
             className="button h-50 px-24 -dark-1 bg-blue-1 text-white"
           >
-            Save Changes <div className="icon-arrow-top-right ml-15" />
+            Save Change<div className="icon-arrow-top-right ml-15" />
           </button>
         </div>
       </form>
