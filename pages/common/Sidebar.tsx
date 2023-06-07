@@ -37,7 +37,7 @@ const Sidebar = () => {
           </a>
         </div>
 
-        {/* <div className="sidebar__item ">
+        <div className="sidebar__item ">
           <a
             href='/vehicle'
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
@@ -51,7 +51,7 @@ const Sidebar = () => {
             />
             Vehicle
           </a>
-        </div> */}
+        </div>
 
         {/* <div className="sidebar__item ">
           <a

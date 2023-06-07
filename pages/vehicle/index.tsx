@@ -8,7 +8,7 @@ import Link from 'next/link';
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Branch" />
+      <Seo pageTitle="Vehicle" />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -28,26 +28,26 @@ const index = () => {
             <div className="row y-gap-0 justify-between items-end pb-10 lg:pb-10 md:pb-10">
               <div className="col-auto mb-40">
                 <h1 className="text-30 text-light-1 fw-600">
-                  Company Branches
+                  Company Vehicle
                 </h1>
               </div>
               {/* End .col-auto */}
               <div className="col-auto  mt-30">
               <div className="col-auto">
                 <Link
-                  href="/branch/add"
+                  href="/vehicle/add"
                   className="button h-50 px-24 -dark-1 bg-blue-1 text-white"
                 >
-                  Add Branch{' '}
+                  Add Vehicle{' '}
                   <div className="icon-arrow-top-right ml-15"></div>
                 </Link>
               </div>
               <div className="col-auto mx-24 mt-30">
                 <Link
-                  href="/branch/edit"
+                  href="/vehicle/edit"
                   className="button h-50 px-24 -dark-1 bg-blue-1 text-white"
                 >
-                  Edit Branch{' '}
+                  Edit Vehicle{' '}
                   <div className="icon-arrow-top-right ml-15"></div>
                 </Link>
               </div>

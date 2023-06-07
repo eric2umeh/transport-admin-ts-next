@@ -7,7 +7,7 @@ import Location from './components/Location';
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Add Location" />
+      <Seo pageTitle="Add Branch" />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
