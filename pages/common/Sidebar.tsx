@@ -7,7 +7,7 @@ const Sidebar = () => {
       <div className="sidebar -dashboard" id="vendorSidebarMenu">
         <div className="sidebar__item ">
           <a
-            href="/"
+            href="/dashboard"
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <Image
@@ -21,7 +21,7 @@ const Sidebar = () => {
           </a>
         </div>
 
-        <div className="sidebar__item ">
+        {/* <div className="sidebar__item ">
           <a
             href="/company"
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
@@ -83,12 +83,12 @@ const Sidebar = () => {
             />
             Location
           </a>
-        </div>
+        </div> */}
         {/* End accordion__item */}
 
         <div className="sidebar__item ">
           <a
-            href="/companysignup/signup"
+            href="/"
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <Image
