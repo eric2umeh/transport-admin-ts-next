@@ -1,5 +1,5 @@
 import Seo from '../../components/common/Seo';
-//import Sidebar from '../common/Sidebar';
+import Sidebar from '../common/Sidebar';
 import Header from '../../components/header/dashboard-header';
 import SettingsTabs from './components/index';
 import Footer from '../common/Footer';
@@ -16,9 +16,9 @@ const index = () => {
       {/* End dashboard-header */}
 
       <div className="dashboard">
-        {/* <div className="dashboard__sidebar bg-white scroll-bar-1">
+        <div className="dashboard__sidebar bg-white scroll-bar-1">
           <Sidebar />
-        </div> */}
+        </div>
         {/* End dashboard__sidebar */}
 
         <div className="dashboard__main">
