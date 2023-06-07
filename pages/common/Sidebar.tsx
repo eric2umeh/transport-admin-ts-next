@@ -39,23 +39,7 @@ const Sidebar = () => {
 
         <div className="sidebar__item ">
           <a
-            href='/vehicle'
-            className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
-          >
-            <Image
-              width={20}
-              height={20}
-              src='/img/dashboard/sidebar/map.svg'
-              alt="image"
-              className="mr-15"
-            />
-            Vehicle
-          </a>
-        </div>
-
-        {/* <div className="sidebar__item ">
-          <a
-            href='/user'
+            href='/employee'
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <Image
@@ -65,9 +49,25 @@ const Sidebar = () => {
               alt="image"
               className="mr-15"
             />
-            User
+            Employee
           </a>
-        </div> */}
+        </div>
+
+        <div className="sidebar__item ">
+          <a
+            href='/vehicle'
+            className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
+          >
+            <Image
+              width={20}
+              height={20}
+              src='/img/dashboard/sidebar/taxi.svg'
+              alt="image"
+              className="mr-15"
+            />
+            Vehicle
+          </a>
+        </div>
 
         {/* <div className="sidebar__item ">
           <a
