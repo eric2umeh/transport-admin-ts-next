@@ -16,7 +16,7 @@ const BookingTable = () => {
 
   const tabItems = [
     'All',
-    'Approved',
+    'Approve',
     'Pending',
     'Rejected',
     'Suspended',
