@@ -197,7 +197,7 @@ const BookingTable = () => {
                     <td>Gwagwalada</td>
                     <td>Abuja</td>
                     
-                    <td>04/04/2022</td>
+                    <td>04/05/2022</td>
 
                     <td>
                       <div className="row x-gap-10 y-gap-10 items-center">
