@@ -7,7 +7,7 @@ import Location from './components/Location';
 const index = () => {
   return (
     <>
-      <Seo pageTitle="Edit Branch" />
+      <Seo pageTitle="Edit Vehicle" />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -26,18 +26,21 @@ const index = () => {
           <div className="dashboard__content bg-light-2">
             <div className="row y-gap-20 justify-between items-end pb-60 lg:pb-40 md:pb-32">
               <div className="col-12">
-                <h1 className="text-30 text-light-1 fw-600">Edit Location</h1>
+                <h1 className="text-30 text-light-1 fw-600">Edit Vehicle</h1>
               </div>
               {/* End .col-12 */}
             </div>
             {/* End .row */}
 
             <div className="py-20 px-20 mb-10 rounded-4 bg-white shadow-3">
-              <Location locationText="Address" />
+              <Location locationText="Name" />
             </div>
 
             <div className="py-20 px-20 rounded-4 bg-white shadow-3">
-              <Location locationText="State" />
+              <Location locationText="Vehicle Number" />
+            </div>
+            <div className="py-20 px-20 mt-10 rounded-4 bg-white shadow-3">
+              <Location locationText="Vehicle Status" />
             </div>
 
             <div className="d-inline-block pt-30">
