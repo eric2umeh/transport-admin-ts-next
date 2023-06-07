@@ -69,21 +69,21 @@ const Sidebar = () => {
           </a>
         </div>
 
-        {/* <div className="sidebar__item ">
+        <div className="sidebar__item ">
           <a
-            href='/location'
+            href='/trip'
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <Image
               width={20}
               height={20}
-              src='/img/dashboard/sidebar/sneakers.svg'
+              src='/img/dashboard/sidebar/map.svg'
               alt="image"
               className="mr-15"
             />
-            Location
+            Trip
           </a>
-        </div> */}
+        </div>
         {/* End accordion__item */}
 
         <div className="sidebar__item ">
