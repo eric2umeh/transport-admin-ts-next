@@ -1,14 +1,17 @@
-import React, { ChangeEvent, useState, FormEvent } from 'react';
+import React, { ChangeEvent, useState, FormEvent, FC } from 'react';
 import Link from 'next/link';
 import DropdownFilter from './DropdownFilter';
 import { gql, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 
-const SignUpForm: React.FC = () => {
+const SignUpForm: FC = () => {
   const router = useRouter();
 
   const [emailError, setEmailError] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
+  const [imageCac, setImageCac] = useState("");
+  const [imageLogo, setImageLogo] = useState("");
+  const [imageId, setImageId] = useState("");
 
   const [formData, setFormData] = useState<SignUpFormProps>({
     firstName: '',

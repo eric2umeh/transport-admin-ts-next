@@ -5,7 +5,7 @@ import Header3 from "../components/header/header-3";
 import LoginForm from "../components/common/LoginForm";
 import Copyright from "../components/footer/footer-3/Copyright";
 
-const SignIn = () => {
+const LogIn = () => {
   return (
     <>
       <Seo pageTitle="Login" />
@@ -21,7 +21,7 @@ const SignIn = () => {
         <div className="container">
           <div className="row justify-center">
             <div className="col-xl-6 col-lg-7 col-md-9">
-              <div className="px-50 py-50 sm:px-20 sm:py-20 bg-white shadow-4 rounded-4">
+              <div className="px-50 py-15 sm:px-20 sm:py-20 bg-white shadow-4 rounded-4">
                 <LoginForm />
                 {/* End .Login */}
 
@@ -47,4 +47,4 @@ const SignIn = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(SignIn), { ssr: false });
+export default dynamic(() => Promise.resolve(LogIn), { ssr: false });
