@@ -1,6 +1,4 @@
-'use client';
 import React from 'react';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
@@ -8,19 +6,25 @@ import {
   Sidebar,
   Menu,
   MenuItem,
-  SubMenu,
 } from 'react-pro-sidebar';
-import ContactInfo from './ContactInfo';
-import Image from 'next/image';
 
-const MobileMenu = () => {
+interface MobileMenuProps {
+  isLoggedIn: boolean;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ isLoggedIn }) => {
   const router = useRouter();
 
   return (
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
         <Link href="/">
-          <Image src="/img/general/light-logo.jpeg" width="100" height="100" alt="brand" />
+          <img
+            src="/img/general/light-logo.jpeg"
+            width="100"
+            height="100"
+            alt="image"
+          />
         </Link>
         {/* End logo */}
 
@@ -38,27 +42,28 @@ const MobileMenu = () => {
       <ProSidebarProvider>
         <Sidebar width="400" backgroundColor="#fff">
           <Menu>
-            <MenuItem
-              component={
-                <Link
-                  href='/account'
-                  className={
-                    router.pathname === '/companyaccount'
-                      ? 'menu-active-link'
-                      : ''
-                  }
-                />
-              }
-            >
-              Account
-            </MenuItem>
+            {isLoggedIn && (
+              <MenuItem
+                component={
+                  <Link
+                    href="/account"
+                    className={
+                      router.pathname === '/account'
+                        ? 'menu-active-link'
+                        : ''
+                    }
+                  />
+                }
+              >
+                Account
+              </MenuItem>
+            )}
             {/* End  account Menu */}
-
           </Menu>
         </Sidebar>
       </ProSidebarProvider>
 
-      <div className="mobile-footer px-20 py-5 border-top-light"></div>
+      {/* <div className="mobile-footer px-20 py-5 border-top-light"></div> */}
     </>
   );
 };
