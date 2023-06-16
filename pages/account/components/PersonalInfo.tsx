@@ -7,7 +7,7 @@ const PersonalInfo = () => {
   return (
     <>
       <form>
-        <AvatarUploader picsName="Company Logo" image={imageLogo} setImage={setImageLogo}  />
+        <AvatarUploader picsName="Company Logo" image={imageLogo} setImage={setImageLogo} type={"logo"}  />
         {/* End AvatarUploader*/}
 
         <div className="border-top-light mt-30 mb-30" />
