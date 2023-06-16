@@ -1,16 +1,32 @@
 import { useState } from "react";
+import { useQuery, gql } from '@apollo/client';
+
+interface MeQuery {
+  me: {
+    gender: string;
+  };
+}
+
+const GET_ME = gql`
+  query Me {
+    me {
+      gender
+    }
+  }
+`;
 
 const DropdownFilter = () => {
-  const [selectedItem, setSelectedItem] = useState("Male");
+  const { loading, error, data } = useQuery<MeQuery>(GET_ME);
+  const [selectedItem, setSelectedItem] = useState<string>(data?.me?.gender || "Male");
 
-  const handleItemClick = (event: any) => {
-    setSelectedItem(event.target.textContent);
+  const handleItemClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    setSelectedItem(event.currentTarget.textContent || "Male");
   };
 
-  const options = [
-    "Male",
-    "Female",
-  ];
+  const options = ["Male", "Female"];
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="dropdown js-dropdown js-services-active">

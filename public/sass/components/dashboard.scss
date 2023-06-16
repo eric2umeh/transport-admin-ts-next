@@ -49,7 +49,7 @@
 
   &__content {
     width: 100%;
-    padding: 60px;
+    padding: 30px;
     padding-bottom: 0;
 
     @include media-below(md) {
@@ -82,7 +82,7 @@
     }
 
     @include media-below(md) {
-      width: 80%;
+      // width: 80%;
       height: calc(100% - 80px);
     }
   }

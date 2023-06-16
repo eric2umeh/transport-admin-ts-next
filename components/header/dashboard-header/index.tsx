@@ -84,7 +84,7 @@ const HeaderDashBoard = () => {
 
                   <div className="header-menu">
                   <div className="header-menu__content">
-                    <MainMenu style="text-dark-1" />
+                    <MainMenu style="text-dark-1" isLoggedIn={true} />
                   </div>
                 </div>
                 {/* End header-menu */}
@@ -119,7 +119,7 @@ const HeaderDashBoard = () => {
                     aria-labelledby="offcanvasMenuLabel"
                     data-bs-scroll="true"
                   >
-                    <MobileMenu />
+                    <MobileMenu isLoggedIn={true} />
                     {/* End MobileMenu */}
                   </div>
                 </div>

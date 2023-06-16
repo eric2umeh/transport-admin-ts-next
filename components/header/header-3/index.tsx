@@ -34,7 +34,7 @@ const Header3 = () => {
 
                 <div className="header-menu">
                   <div className="header-menu__content">
-                    <MainMenu style="text-dark-1" />
+                    <MainMenu style="text-dark-1" isLoggedIn={false} />
                   </div>
                 </div>
                 {/* End header-menu */}
@@ -84,7 +84,7 @@ const Header3 = () => {
                       aria-labelledby="offcanvasMenuLabel"
                       data-bs-scroll="true"
                     >
-                      <MobileMenu />
+                      <MobileMenu isLoggedIn={false}  />
                       {/* End MobileMenu */}
                     </div>
                   </div>

@@ -11,6 +11,8 @@ import 'aos/dist/aos.css';
 import '../styles/index.scss';
 import { Provider } from 'react-redux';
 import { store } from '../app/store';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '@/apollo';
 
 if (typeof window !== 'undefined') {
   require('bootstrap/dist/js/bootstrap');
@@ -26,8 +28,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <main>
       <Provider store={store}>
-        <Component {...pageProps} />
-        <SrollTop />
+        <ApolloProvider client={client}>
+          <Component {...pageProps} />
+          <SrollTop />
+        </ApolloProvider>
       </Provider>
     </main>
   );
