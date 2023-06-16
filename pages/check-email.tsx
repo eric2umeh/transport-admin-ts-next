@@ -5,28 +5,35 @@ import Header3 from "../components/header/header-3";
 import Copyright from "@/components/footer/footer-3/Copyright";
 import { gql, useQuery } from "@apollo/client";
 
-type User = {
+type Company = {
   id: string;
   email: string;
   createdAt: string;
 };
 
 
-export const ALL_USER_QUERY = gql`
-  query AllUser($page: Int!) {
-    allUser(input: { page: $page }) {
+export const ALL_COMPANY_QUERY = gql`
+  query AllCompany($page: Int!) {
+    allCompany(input: { page: $page }) {
       ok
       results {
         id
+        name
         status
         email
-        firstName
-        lastName
+        logo
+        cac
+        passport
+        rcNumber
         phoneNumber
-        fullName
-        imageUri
-        gender
-        # role
+        address
+        owner {
+          id
+          firstName
+          lastName
+          phoneNumber
+          fullName
+        }
         createdAt
       }
       totalPages
@@ -36,13 +43,13 @@ export const ALL_USER_QUERY = gql`
 
 const CheckEmailPage: FC = () => {
 
-  const { loading, data } = useQuery<{ allUser: { results: User[] } }>(ALL_USER_QUERY, {
+  const { loading, data } = useQuery<{ allCompany: { results: Company[] } }>(ALL_COMPANY_QUERY, {
     variables: { page: 1 },
   });
 
-  const activeUsers = data?.allUser?.results;
-  const userEmail = activeUsers && activeUsers.length > 0 ? activeUsers[0].email : '';
-console.log(activeUsers, 'emailddddd')
+  const activeCompanys = data?.allCompany?.results;
+  const companyEmail = activeCompanys && activeCompanys.length > 0 ? activeCompanys[0].email : '';
+console.log(activeCompanys, 'emailddddd')
   return (
     <>
       <Seo pageTitle="Check Email" />
@@ -60,11 +67,9 @@ console.log(activeUsers, 'emailddddd')
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="px-50 py-50 sm:px-20 sm:py-20 bg-white shadow-4 rounded-4">
                 <div className="text-center">
-                  <h2>Check Your Email</h2>
+                  <h2>Thank you for registering with us</h2>
                   <p>
-                    We've sent a verification link to your email address. Please
-                    check your inbox and click on the link to activate your
-                    account.
+                    Your details would be verified within 2 working days. Please check your email <b>{companyEmail}</b> for any repsonse.
                   </p>
                 </div>
 
@@ -72,7 +77,7 @@ console.log(activeUsers, 'emailddddd')
                   <div className="col-12">
                     <div className="text-center px-30">
                       Didn't receive an email? Make sure to check your spam
-                      folder. If you still don't see it, you can email us at <b>{userEmail}</b>
+                      folder. If you still don't see it, you can email us at <b>tfaregroup@gmail.com</b>
                     </div>
                   </div>
                 </div>

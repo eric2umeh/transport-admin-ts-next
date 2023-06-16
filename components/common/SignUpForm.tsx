@@ -1,17 +1,40 @@
-import React, { ChangeEvent, useState, FormEvent, FC } from 'react';
+import React, { ChangeEvent, useState, FormEvent } from 'react';
 import Link from 'next/link';
-import DropdownFilter from './DropdownFilter';
 import { gql, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 
-const SignUpForm: FC = () => {
+const SIGNUP_MUTATION = gql`
+  mutation createAccount($input: CreateAccountInput!) {
+    createAccount(input: $input) {
+      ok
+      error
+      token
+      refreshToken
+    }
+  }
+`;
+
+interface SignUpFormProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  password: string;
+  gender: string; // Added gender field
+}
+
+interface CreateAccountResponse {
+  ok: boolean;
+  error: string | null;
+  token: string | null;
+  refreshToken: string | null;
+}
+
+const SignUpForm: React.FC = () => {
   const router = useRouter();
 
   const [emailError, setEmailError] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
-  const [imageCac, setImageCac] = useState("");
-  const [imageLogo, setImageLogo] = useState("");
-  const [imageId, setImageId] = useState("");
 
   const [formData, setFormData] = useState<SignUpFormProps>({
     firstName: '',
@@ -26,7 +49,7 @@ const SignUpForm: FC = () => {
     
     onCompleted: (data) => {
       if (data.createAccount.ok) {
-        router.push('/check-email');
+        router.push('/signup-company');
       } else {
         const error = data.createAccount.error;
         //the sign-up mutation (backend) returns an error with the code "There is a user with that email already"
@@ -93,7 +116,7 @@ const SignUpForm: FC = () => {
   return (
     <form className="row y-gap-20" onSubmit={handleSubmit}>
       <div className="col-12">
-        <h1 className="text-22 fw-500">Welcome back</h1>
+        <h1 className="text-22 fw-500">Welcome</h1>
         <p className="mt-10">
           Already have an account yet?{' '}
           <Link href="/login" className="text-blue-1">
@@ -136,12 +159,6 @@ const SignUpForm: FC = () => {
         </div>
       </div>
       {/* End .col */}
-
-      {/* <div className="col-12 ">
-        <div className=" ">
-          <DropdownFilter />
-        </div>
-      </div> */}
 
       <div className="col-12">
         <div className="form-input">
@@ -186,28 +203,3 @@ const SignUpForm: FC = () => {
 };
 
 export default SignUpForm;
-
-const SIGNUP_MUTATION = gql`
-  mutation createAccount($input: CreateAccountInput!) {
-    createAccount(input: $input) {
-      ok
-      error
-      token
-    }
-  }
-`;
-
-interface SignUpFormProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  password: string;
-  gender: string; // Added gender field
-}
-
-interface CreateAccountResponse {
-  ok: boolean;
-  error: string | null;
-  token: string | null;
-}
