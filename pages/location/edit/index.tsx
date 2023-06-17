@@ -2,7 +2,7 @@ import Seo from '../../../components/common/Seo';
 import Sidebar from '../../common/Sidebar';
 import Header from '../../../components/header/dashboard-header';
 import Footer from '../../common/Footer';
-import EditBranch from './components/EditBranch';
+import EditBranch from './EditBranch';
 
 const index = () => {
   return (
