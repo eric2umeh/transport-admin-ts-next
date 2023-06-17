@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Pagination from '../../common/Pagination';
+// import Pagination from '../../common/Pagination';
 import ActionsButton from './ActionsButton';
 import Detail from './Detail';
 
@@ -143,7 +143,7 @@ const BookingTable = () => {
           </div>
         </div>
       </div>
-      <Pagination />
+      {/* <Pagination /> */}
 
 
       {/* Modal */}
