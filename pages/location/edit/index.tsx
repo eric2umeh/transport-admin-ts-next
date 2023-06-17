@@ -2,7 +2,7 @@ import Seo from '../../../components/common/Seo';
 import Sidebar from '../../common/Sidebar';
 import Header from '../../../components/header/dashboard-header';
 import Footer from '../../common/Footer';
-import Location from './components/Location';
+import EditBranch from './components/EditBranch';
 
 const index = () => {
   return (
@@ -33,11 +33,11 @@ const index = () => {
             {/* End .row */}
 
             <div className="py-20 px-20 mb-10 rounded-4 bg-white shadow-3">
-              <Location locationText="Address" />
+              <EditBranch locationText="Address" />
             </div>
 
             <div className="py-20 px-20 rounded-4 bg-white shadow-3">
-              <Location locationText="State" />
+              <EditBranch locationText="State" />
             </div>
 
             <div className="d-inline-block pt-30">

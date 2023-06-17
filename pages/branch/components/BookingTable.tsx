@@ -1,12 +1,75 @@
 import { useState } from "react";
 import Pagination from "../../common/Pagination";
+import { gql, useQuery } from "@apollo/client";
+
+
+interface Branch {
+  id: string;
+  city: string;
+  location: Location;
+  createdAt: Date;
+}
+
+interface Location {
+  id: string;
+  city: string;
+  state: State;
+}
+
+interface State {
+  id: string;
+  country: string;
+  state: string;
+}
+
+interface AllBranchData {
+  allBranch: {
+    ok: boolean;
+    results: Branch[];
+    error: string;
+    totalPages: number;
+  };
+}
+
+export const ALL_BRANCH_QUERY = gql`
+  query AllBranch($page: Int!) {
+    allBranch {
+      ok
+      error
+      totalPages
+      results {
+        id
+        isActive
+        company {
+          name
+        }
+        address
+        location {
+          city
+          state {
+            state
+            country
+          }
+        }
+        users_count
+      }
+    }
+  }
+`;
 
 const BookingTable = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [page, setPage] = useState(1)
 
   const handleTabClick = (index: any) => {
     setActiveTab(index);
   };
+
+  const { loading, error, data } = useQuery<AllBranchData>(ALL_BRANCH_QUERY, {
+    variables: {
+      page: page,
+    },
+  });
 
   const tabItems = [
     "All",
@@ -246,7 +309,7 @@ const BookingTable = () => {
           </div>
         </div>
       </div>
-      <Pagination />
+      <Pagination totalPages={ data?.allBranch.totalPages} setCurrentPage={ setPage } currentPage={ page }/>
     </>
   );
 };
