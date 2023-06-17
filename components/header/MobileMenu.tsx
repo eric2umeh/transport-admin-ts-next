@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
@@ -12,7 +12,7 @@ interface MobileMenuProps {
   isLoggedIn: boolean;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isLoggedIn }) => {
+const MobileMenu: FC<MobileMenuProps> = ({ isLoggedIn }) => {
   const router = useRouter();
 
   return (
