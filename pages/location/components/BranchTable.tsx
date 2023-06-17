@@ -133,7 +133,7 @@ const BranchTable: FC = () => {
           </div>
         </div>
       </div>
-      <Pagination totalPages={ data?.allBranch.totalPages} setCurrentPage={ setPage } currentPage={ page }/>
+      <Pagination />
 
       {/* Modal */}
       {selectedBranch && (
