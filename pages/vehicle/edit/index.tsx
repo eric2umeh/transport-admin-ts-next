@@ -2,7 +2,7 @@ import Seo from '../../../components/common/Seo';
 import Sidebar from '../../common/Sidebar';
 import Header from '../../../components/header/dashboard-header';
 import Footer from '../../common/Footer';
-import Location from './components/Location';
+import EditVehicle from './EditVehicle';
 
 const index = () => {
   return (
@@ -33,14 +33,14 @@ const index = () => {
             {/* End .row */}
 
             <div className="py-20 px-20 mb-10 rounded-4 bg-white shadow-3">
-              <Location locationText="Name" />
+              <EditVehicle locationText="Name" />
             </div>
 
             <div className="py-20 px-20 rounded-4 bg-white shadow-3">
-              <Location locationText="Vehicle Number" />
+              <EditVehicle locationText="Vehicle Number" />
             </div>
             <div className="py-20 px-20 mt-10 rounded-4 bg-white shadow-3">
-              <Location locationText="Vehicle Status" />
+              <EditVehicle locationText="Vehicle Status" />
             </div>
 
             <div className="d-inline-block pt-30">
