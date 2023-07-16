@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import Pagination from '../../common/Pagination';
-import ActionsButton from './ActionsButton';
 import Detail from './Detail';
 import Loading from '@/components/common/Loading';
+import EditVehicle from './EditVehicle';
 
 interface Vehicle {
   id: string;
@@ -38,6 +38,14 @@ interface AllVehicleData {
     totalPages: number;
   };
 }
+const EDIT_VEHICLE_MUTATION = gql`
+  mutation editVehicle ($input: EditVehicleInput!) {
+    editVehicle(input: $input) {
+      ok
+      error
+    }
+  }
+`;
 
 export const ALL_VEHICLE_QUERY = gql`
   query AllVehicle($page: Int!) {
@@ -69,6 +77,7 @@ export const ALL_VEHICLE_QUERY = gql`
 const VehicleTable: FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [editedVehicle, setEditedVehicle] = useState<Vehicle | null>(null);
   const [page, setPage] = useState(1)
 
   const handleTabClick = (index: number) => {
@@ -81,6 +90,13 @@ const VehicleTable: FC = () => {
     setSelectedVehicle(vehicle);
     setClick((prevState) => !prevState);
   };
+
+  const [editClick, setEditClick] = useState(false);
+  const editHandleModal = (vehicle: Vehicle) => {
+    setEditedVehicle(vehicle);
+    setEditClick((prevState) => !prevState);
+  };
+
   const tabItems = [
     'All',
     'Active',
@@ -147,7 +163,6 @@ const VehicleTable: FC = () => {
                   <tr>
                     <th className="d-none d-sm-block d-md-none">Type</th>
                     <th>Registration Number</th>
-                    <th className="d-none d-sm-block d-md-none">Company Name</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
@@ -162,7 +177,6 @@ const VehicleTable: FC = () => {
                     <tr className="cursor-pointer" key={vehicle.id}>
                       <td className="d-none d-sm-block d-md-none" onClick={() => handleModal(vehicle)}>{vehicle.type}</td>
                       <td onClick={() => handleModal(vehicle)}>{vehicle.vehicleNumber}</td>
-                      <td className="d-none d-sm-block d-md-none" onClick={() => handleModal(vehicle)}>{vehicle.company.name}</td>
                       <td onClick={() => handleModal(vehicle)}>
                           <p className="text-14">
                             <span
@@ -183,7 +197,18 @@ const VehicleTable: FC = () => {
                           </p>
                         </td>
                       <td>
-                        <ActionsButton vehicleIds={[vehicle.id]}/>
+                        <div className="row x-gap-10 y-gap-10 items-center">
+                          <div className="col-auto">
+                            <button onClick={() => editHandleModal(vehicle)} className="flex-center bg-light-2 rounded-4 size-35">
+                              <i className="icon-edit text-16 text-light-1" />
+                            </button>
+                          </div>
+                          <div className="col-auto">
+                            <button className="flex-center bg-light-2 rounded-4 size-35">
+                              <i className="icon-trash-2 text-16 text-light-1" />
+                            </button>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   )))}
@@ -217,6 +242,29 @@ const VehicleTable: FC = () => {
         {/* End modalMenu */}
       </div>
       )}
+
+    {editedVehicle && (
+      <div className={`modalMenu js-modalMenu ${click ? '' : 'is-hidden'}`}>
+        <div className="currencyMenu__bg" onClick={() => setClick((prevState) => !prevState)}></div>
+        <div className="modalMenu__content bg-white rounded-4">
+          <div className="d-flex items-center justify-between px-30 py-20 sm:px-15 border-bottom-light">
+            <div className="text-20 fw-500 lh-15">Details</div>
+            {/* End title */}
+            <button className="pointer" onClick={() => setClick((prevState) => !prevState)}>
+              <i className="icon-close" />
+            </button>
+            {/* End colse button */}
+          </div>
+          {/* Emd flex-wrapper */}
+
+          <div className="px-30 py-20 sm:px-15">
+            {editedVehicle && <EditVehicle editVehicle={editedVehicle} />}
+          </div>
+        </div>
+        {/* End modalMenu */}
+      </div>
+      )}
+      
     </>
   );
 };

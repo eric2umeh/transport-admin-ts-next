@@ -123,7 +123,7 @@ const Detail: FC<DetailProps> = ({ vehicle }) => {
                     {/* 33333 */}
                   </span>{' '}
                   Completed Trips
-                  <div className="text-14 lh-14 text-light-1">ID: 3</div>
+                  <div className="text-14 lh-14 text-light-1">ID: {vehicle.id}</div>
                 </div>
                 <div className="col-auto">
                   <div className="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1">
