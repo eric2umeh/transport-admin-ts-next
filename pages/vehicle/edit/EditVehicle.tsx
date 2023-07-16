@@ -1,6 +1,35 @@
+import { gql } from "@apollo/client";
 import { useState } from "react";
 
-const Location = ({ locationText }) => {
+const EDIT_VEHICLE_MUTATION = gql`
+  mutation editVehicle($input: EditVehicleInput!) {
+    editVehicle(input: $input) {
+      ok
+      error
+      vehicleId
+    }
+  }
+`;
+
+interface EditVehicle {
+  name: string;
+  vehicleId: string;
+  vehicleNumber: string;
+  status: string;
+}
+
+interface CreateAccountResponse {
+  ok: boolean;
+  error: string | null;
+  token: string | null;
+  refreshToken: string | null;
+}
+
+// interface EditVehicleProps {
+//   vehicleIds: string[];
+// }
+
+const EditVehicle = () => {
   const [searchValue, setSearchValue] = useState([]);
 
   const [selectedItem, setSelectedItem] = useState(null);
@@ -95,4 +124,4 @@ const Location = ({ locationText }) => {
   );
 };
 
-export default Location;
+export default EditVehicle;

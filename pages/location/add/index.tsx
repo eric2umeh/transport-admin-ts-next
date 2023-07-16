@@ -2,7 +2,7 @@ import Seo from '../../../components/common/Seo';
 import Sidebar from '../../common/Sidebar';
 import Header from '../../../components/header/dashboard-header';
 import Footer from '../../common/Footer';
-import Location from './components/Location';
+import Location from './Location';
 
 const index = () => {
   return (

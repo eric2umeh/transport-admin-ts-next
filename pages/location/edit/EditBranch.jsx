@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Location = ({ locationText }) => {
+const EditBranch = ({ locationText }) => {
   const [searchValue, setSearchValue] = useState([]);
 
   const [selectedItem, setSelectedItem] = useState(null);
@@ -95,4 +95,4 @@ const Location = ({ locationText }) => {
   );
 };
 
-export default Location;
+export default EditBranch;
